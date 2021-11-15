@@ -37,48 +37,48 @@ const geojson = {
 };
     
      
- map.on('load', () => {
+map.on('load', () => {
 // 'line-gradient' can only be used with GeoJSON sources
 // and the source must have the 'lineMetrics' option set to true
-map.addSource('line', {
-    type: 'geojson',
-    lineMetrics: true,
-    data: geojson
-});
+    map.addSource('line', {
+        type: 'geojson',
+        lineMetrics: true,
+        data: geojson
+    });
     
 // the layer must be of type 'line'
-map.addLayer({
-    type: 'line',
-    source: 'line',
-    id: 'line',
-    paint: {
-        'line-color': 'red',
-        'line-width': 9,
-        // 'line-gradient' must be specified using an expression
-        // with the special 'line-progress' property
-        'line-gradient': [
-        'interpolate',
-        ['linear'],
-        ['line-progress'],
-        0,
-        'blue',
-        0.1,
-        'royalblue',
-        0.3,
-        'cyan',
-        0.5,
-        'lime',
-        0.7,
-        'yellow',
-        1,
-        'red'
-        ]
-    },
-layout: {
-    'line-cap': 'round',
-    'line-join': 'round'
-}
-});
+    map.addLayer({
+        type: 'line',
+        source: 'line',
+        id: 'line',
+        paint: {
+            'line-color': 'red',
+            'line-width': 9,
+            // 'line-gradient' must be specified using an expression
+            // with the special 'line-progress' property
+            'line-gradient': [
+            'interpolate',
+            ['linear'],
+            ['line-progress'],
+            0,
+            'blue',
+            0.1,
+            'royalblue',
+            0.3,
+            'cyan',
+            0.5,
+            'lime',
+            0.7,
+            'yellow',
+            1,
+            'red'
+            ]
+        },
+        layout: {
+            'line-cap': 'round',
+            'line-join': 'round'
+        }
+    });
 });
 
 // lim administratius espluga
@@ -141,16 +141,12 @@ map.addControl(
 
 
 const layers = [
-    '0-10',
-    '10-20',
-    '20-50',
-    '50-100'
+    'Sortida',
+    'Meta'
   ];
   const colors = [
-    '#FFEDA0',
-    '#FED976',
-    '#FEB24C',
-    '#FD8D3C'
+    'blue',
+    'red'
   ];
 
   // create legend
