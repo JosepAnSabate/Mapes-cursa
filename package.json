@@ -1,0 +1,23 @@
+{
+  "name": "cursa_espluga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Josep",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "mapbox-gl": "^2.6.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
