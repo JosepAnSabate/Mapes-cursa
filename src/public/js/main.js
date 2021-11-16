@@ -1,10 +1,37 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBhbnNhYmF0ZSIsImEiOiJja21kejl5bHUxdzhoMnBwaDg0YjJ1bDRxIn0.fVRAXWvmIKHZ-4igiQQeRg';
-const map = new mapboxgl.Map({
+/* const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
     center: [1.1, 41.43], // starting position [lng, lat]
     zoom: 12 // starting zoom
-});
+}); */
+
+//fons icgc
+const map = new mapboxgl.Map({
+    container: 'map',
+    style:{
+        'version': 8,
+        'sources': {
+          'raster-tiles': {
+            'type': 'raster',
+            'tiles': [
+              "https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg",
+            ],
+            'tileSize': 256,
+          }
+        },
+        'layers': [{
+          'id': 'simple-tiles',
+          'type': 'raster',
+          'source': 'raster-tiles',
+          'minzoom': 0,
+          'maxzoom': 22
+        }]
+      },
+    center: [1.1, 41.43],
+    zoom: 12
+    });
+
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
@@ -133,8 +160,6 @@ map.addControl(
 );
 
 // legend
-
-
 const layers = [
     'Sortida',
     'Meta'
@@ -144,7 +169,7 @@ const layers = [
     'red'
   ];
 
-  // create legend
+// create legend
 const legend = document.getElementById('legend');
 
 layers.forEach((layer, i) => {
@@ -160,5 +185,22 @@ layers.forEach((layer, i) => {
   item.appendChild(value);
   legend.appendChild(item);
 });
+/*
+// layer swicher
+const layerList = document.getElementById('menu');
+const inputs = layerList.getElementsByTagName('input');
 
-
+for (const input of inputs) {
+    input.onclick = (layer) => {
+    const layerId = layer.target.id;
+   const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: layerId, // style URL
+        center: [1.1, 41.43],
+        zoom: 12
+        });
+    // map.setStyle(layerId);
+    };
+    
+}
+*/
