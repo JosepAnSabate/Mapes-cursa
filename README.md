@@ -1,6 +1,6 @@
 # Race Locator
 
-> Node/Express/Mongo/EJS//Mapbox app for the Espluga de francolí race. Contains the route of the race and the administrative limits of the municipality. Hosted on AWS.
+> Node/Express/Mongo/EJS//Mapbox GL app for the Espluga de francolí race. Contains the route of the race and the administrative limits of the municipality. Hosted on AWS.
 
 [https://www.geoatles.com/](https://www.geoatles.com/)
 
